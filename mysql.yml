@@ -1,8 +1,0 @@
-name: mysql
-
-topology:
-  nodes:
-    db:
-      kind: linux
-      image: esanchezv/ubuntu2204:latest
-      

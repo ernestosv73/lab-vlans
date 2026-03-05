@@ -1,0 +1,64 @@
+name: lab-vlans
+
+
+topology:
+  nodes:
+  
+    arubacore:
+      kind: aruba_aoscx 
+      image: vrnetlab/aruba_arubaos-cx:20240731173624
+      #startup-config: cfgcore.txt
+      
+            
+    arubaaccess-1:
+      kind: aruba_aoscx 
+      image: vrnetlab/aruba_arubaos-cx:20240731173624
+      #startup-config: cfgaccess.txt
+
+    arubaaccess-2:
+      kind: aruba_aoscx 
+      image: vrnetlab/aruba_arubaos-cx:20240731173624
+      #startup-config: cfgaccess.txt
+              
+   
+    PC1:
+      kind: linux
+      image: docker.io/esanchezv/kaliipv6:latest
+      exec:
+       - ip -6 route del default dev eth0
+      
+    PC2:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      exec:
+       - ip -6 route del default dev eth0
+             
+    PC3:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      exec:
+      - ip -6 route del default dev eth0
+            
+    PC4:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      exec:
+       - ip -6 route del default dev eth0
+                   
+  links:
+       
+    - endpoints: ["arubacore:eth1","arubaaccess-1:eth1""]
+      mtu: 1500
+    - endpoints: ["arubacore:eth2","arubaaccess-2:eth1"]
+      mtu: 1500
+    - endpoints: ["arubaaccess-1:eth2","PC1:eth1"]
+      mtu: 1500
+    - endpoints: ["arubaaccess-1:eth3","PC2:eth1"]
+      mtu: 1500
+    - endpoints: ["arubaaccess-2:eth2","PC3:eth1"]
+      mtu: 1500
+    - endpoints: ["arubaaccess-2:eth3","PC4:eth1"]
+      mtu: 1500
+    
+    
+      
