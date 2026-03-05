@@ -47,7 +47,7 @@ topology:
                    
   links:
        
-    - endpoints: ["arubacore:eth1","arubaaccess-1:eth1""]
+    - endpoints: ["arubacore:eth1","arubaaccess-1:eth1"]
       mtu: 1500
     - endpoints: ["arubacore:eth2","arubaaccess-2:eth1"]
       mtu: 1500
