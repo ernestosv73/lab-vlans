@@ -26,12 +26,14 @@ topology:
       image: docker.io/esanchezv/kaliipv6:latest
       exec:
        - ip -6 route del default dev eth0
+       - ip addr add 192.168.0.10/24 dev eth1
       
     PC2:
       kind: linux
       image: ghcr.io/hellt/network-multitool
       exec:
        - ip -6 route del default dev eth0
+       - ip addr add 192.168.1.10/24 dev eth1
              
     PC3:
       kind: linux
@@ -48,9 +50,7 @@ topology:
   links:
        
     - endpoints: ["srlrouter:e1-1","arubaaccess-1:eth1"]
-      mtu: 1500
     - endpoints: ["srlrouter:e1-2","arubaaccess-2:eth1"]
-      mtu: 1500
     - endpoints: ["arubaaccess-1:eth2","PC1:eth1"]
       mtu: 1500
     - endpoints: ["arubaaccess-1:eth3","PC2:eth1"]
