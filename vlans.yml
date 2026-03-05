@@ -4,10 +4,10 @@ name: lab-vlans
 topology:
   nodes:
   
-    arubacore:
-      kind: aruba_aoscx 
-      image: vrnetlab/aruba_arubaos-cx:20240731173624
-      #startup-config: cfgcore.txt
+    srlrouter:
+      kind: nokia_srlinux
+      image: ghcr.io/nokia/srlinux:24.10.1
+      type: ixr-d3
       
             
     arubaaccess-1:
@@ -47,9 +47,9 @@ topology:
                    
   links:
        
-    - endpoints: ["arubacore:eth1","arubaaccess-1:eth1"]
+    - endpoints: ["srlrouter:e1-1","arubaaccess-1:eth1"]
       mtu: 1500
-    - endpoints: ["arubacore:eth2","arubaaccess-2:eth1"]
+    - endpoints: ["srlrouter:e1-2","arubaaccess-2:eth1"]
       mtu: 1500
     - endpoints: ["arubaaccess-1:eth2","PC1:eth1"]
       mtu: 1500
