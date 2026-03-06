@@ -19,7 +19,7 @@ topology:
     arubaaccess-2:
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20240731173624
-      #startup-config: cfgaccess.txt
+      startup-config: configs/cfg-access-2.txt
               
    
     PC1:
@@ -27,20 +27,28 @@ topology:
       image: docker.io/esanchezv/kaliipv6:latest
       exec:
        - ip -6 route del default dev eth0
+       - ip route del default dev eth0
        - ip addr add 192.168.0.10/24 dev eth1
+       - ip route add default via 192.168.0.1
       
     PC2:
       kind: linux
       image: ghcr.io/hellt/network-multitool
       exec:
        - ip -6 route del default dev eth0
+       - ip route del default dev eth0
        - ip addr add 192.168.1.10/24 dev eth1
+       - ip route add default via 192.168.1.1
+       
              
     PC3:
       kind: linux
       image: ghcr.io/hellt/network-multitool
       exec:
       - ip -6 route del default dev eth0
+      - ip route del default dev eth0
+      - ip addr add 172.16.31.10/24 dev eth1
+      - ip route add default via 172.16.31.1
             
     PC4:
       kind: linux
