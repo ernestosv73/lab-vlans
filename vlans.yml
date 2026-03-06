@@ -8,12 +8,13 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
       type: ixr-d3
+      startup-config: configs/srlrouter.cfg
       
             
     arubaaccess-1:
       kind: aruba_aoscx 
       image: vrnetlab/aruba_arubaos-cx:20240731173624
-      #startup-config: cfgaccess.txt
+      startup-config: configs/cfg-access-1.txt
 
     arubaaccess-2:
       kind: aruba_aoscx 
