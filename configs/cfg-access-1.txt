@@ -23,6 +23,8 @@ interface 1/1/1
 ip address 10.1.1.1/30
 no shut
 exit
+ip route 0.0.0.0/0 10.1.1.2
+
 
 
 
