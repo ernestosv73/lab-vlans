@@ -4,17 +4,17 @@ name: lab-vlans
 topology:
   nodes:
   
-    srlrouter:
+    srlswitch:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
       type: ixr-d3
       startup-config: configs/srlrouter.cfg
       
             
-    arubaaccess-1:
-      kind: aruba_aoscx 
-      image: vrnetlab/aruba_arubaos-cx:20240731173624
-      startup-config: configs/cfg-access-1.txt
+    ciscoswith:
+      kind: cisco_iol
+      image: vrnetlab/cisco_iol:L2-17.12.01
+      type: L2
 
     arubaaccess-2:
       kind: aruba_aoscx 
