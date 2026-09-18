@@ -15,7 +15,7 @@ topology:
       kind: cisco_iol
       image: docker.io/edwin71/cisco-iol:L2-17.15.01
       type: L2
-      startup-config: configs/cfg-cisco.txt
+      startup-config: configs/cfg-cisco.partial
 
    
    
