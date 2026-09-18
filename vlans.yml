@@ -8,14 +8,14 @@ topology:
       kind: nokia_srlinux
       image: ghcr.io/nokia/srlinux:24.10.1
       type: ixr-d3
-      #startup-config: configs/srlrouter.cfg
+      startup-config: configs/srlswitch.cfg
       
             
     ciscoswitch:
       kind: cisco_iol
       image: docker.io/edwin71/cisco-iol:L2-17.15.01
       type: L2
-      #startup-config: configs/router-wan1/configw1.partial
+      startup-config: configs/cisco.txt
 
    
    
