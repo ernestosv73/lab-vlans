@@ -22,8 +22,13 @@ Comandos úteis:
 clab deploy -t vlans.yml
 ```
 ```bash
+clab destroy -t vlans.yml
+```
+**Acessar os PCs**
+```bash
 docker exec -it clab-lab-vlans-PC1 /bin/bash
 ```
+**Acessar os Switchs**
 ```bash
 ssh@admin clab-lab-vlans-srlswitch
 ```
