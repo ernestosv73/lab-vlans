@@ -22,5 +22,10 @@ Comandos úteis:
 clab deploy -t vlans.yml
 ```
 ```bash
-docker exec -it clab-labvlans-nombrenodo /bin/bash
+docker exec -it clab-lab-vlans-PC1 /bin/bash
+```
+```bash
+ssh@admin clab-lab-vlans-srlswitch
+```
+
 ---
