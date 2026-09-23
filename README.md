@@ -27,5 +27,7 @@ docker exec -it clab-lab-vlans-PC1 /bin/bash
 ```bash
 ssh@admin clab-lab-vlans-srlswitch
 ```
-
+```bash
+ssh@admin clab-lab-vlans-ciscoswitch
+```
 ---
