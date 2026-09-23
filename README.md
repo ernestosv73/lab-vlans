@@ -27,7 +27,9 @@ docker exec -it clab-lab-vlans-PC1 /bin/bash
 ```bash
 ssh@admin clab-lab-vlans-srlswitch
 ```
+password: NokiaSrl1!
 ```bash
 ssh@admin clab-lab-vlans-ciscoswitch
 ```
----
+password: admin
+
