@@ -14,13 +14,13 @@ A topologia foi configurada para execução em uma instância do **GitHub Codesp
 2. Clique em **Create Codespaces on main**.
 
 ---
+## ▶️ Gestão do ciclo de vida da topologia e acesso aos nodes
 
-## ▶️ Iniciar o laboratório
-
-Ejecutar:
+Comandos úteis:
 
 ```bash
-clab deploy -t topo-telemetria.yml
+clab deploy -t vlans.yml
 ```
-
+```bash
+docker exec -it clab-labvlans-nombrenodo /bin/bash
 ---
