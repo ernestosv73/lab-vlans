@@ -3,6 +3,8 @@ vlan 10
 exit
 vlan 20
 exit
+vlan 30
+exit
 interface ethernet 0/1
 switchport trunk encapsulation dot1q 
 switchport mode trunk
