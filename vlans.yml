@@ -55,13 +55,21 @@ topology:
        - ip addr add 10.20.0.11/24 dev eth1
        #- ip route add default via 192.168.1.1   
                     
-                    
+    PC5:
+      kind: linux
+      image: ghcr.io/hellt/network-multitool
+      exec:
+       - ip -6 route del default dev eth0
+       - ip route del default dev eth0
+       - ip addr add 10.20.0.12/24 dev eth1
+       #- ip route add default via 192.168.1.1                   
   links:
        
     - endpoints: ["srlswitch:e1-1","ciscoswitch:Ethernet0/1"]
     - endpoints: ["srlswitch:e1-2","PC1:eth1"]
     - endpoints: ["ciscoswitch:Ethernet0/2","PC2:eth1"]
     - endpoints: ["srlswitch:e1-3","PC3:eth1"]
+    - endpoints: ["srlswitch:e1-4","PC5:eth1"]
     - endpoints: ["ciscoswitch:Ethernet0/3","PC4:eth1"]
     
     
